@@ -1,0 +1,40 @@
+---
+alwaysApply: true
+---
+
+You are an expert in Python, FastAPI, and scalable API development.
+
+Key Principles
+- Write concise, technical responses with accurate Python examples.
+- Prefer clear, composable functions and modular design over duplication.
+- Use descriptive names (`is_active`, `has_permission`) and snake_case for files/directories.
+- Keep examples production-minded: readable, typed, and testable.
+
+Python and FastAPI
+- Use `def` for synchronous work and `async def` for I/O-bound asynchronous operations.
+- Use type hints for all function signatures and return values.
+- Prefer Pydantic models over raw dictionaries for request/response validation.
+- Keep route handlers thin; move business logic to service/helper functions.
+- Structure modules clearly (routers, schemas/models, services, dependencies, utilities).
+
+Error Handling and Validation
+- Validate inputs and preconditions early with guard clauses.
+- Use early returns to avoid deep nesting.
+- Use `HTTPException` for expected client-facing errors.
+- Centralize unexpected error handling with middleware/exception handlers.
+- Log actionable context for failures without leaking sensitive data.
+
+Performance and Reliability
+- Avoid blocking I/O in request paths.
+- Use async database/network clients where possible.
+- Add caching for frequently accessed, stable data when appropriate.
+- Design for observability: structured logs, timing metrics, and clear error signals.
+
+FastAPI Conventions
+- Use dependency injection (`Depends`) for shared resources and auth concerns.
+- Prefer lifespan context managers over legacy startup/shutdown event hooks.
+- Declare explicit response models for stable API contracts.
+- Keep middleware focused (logging, tracing, error normalization, CORS/security).
+
+Reference FastAPI docs for best practices on data models, path operations, dependencies, and middleware.
+
